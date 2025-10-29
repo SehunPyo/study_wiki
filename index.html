@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>타이틀</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+  <!-- Docsify 테마 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <style>
+    .markdown-section pre,
+    .markdown-section code[class*="language-"] {
+      background: #f6f8fa !important;  /* 코드 영역 배경색 (연한 회색) */
+      color: #24292f !important;       /* 기본 글자색 (진회색) */
+      font-weight: 500;                /* 전체 글자 살짝 굵게 */
+      font-family: 'Fira Code', 'Consolas', 'Pretendard', monospace; /* 코드 전용 폰트 */
+      line-height: 1.6;                /* 줄 간격 살짝 넓게 */
+    }
+
+    /* 🔸 기호/연산자 색상 강조 (< > = ; , 등) */
+    .markdown-section .token.punctuation,
+    .markdown-section .token.operator {
+      color: #112722 !important;  /* 거의 검정색으로 진하게 */
+      font-weight: 500;           /* 굵게 강조 */
+    }
+
+    /* 🔹 HTML 태그, 속성명, 속성값, 문자열, 키워드 색상 */
+    .markdown-section .token.tag         { color: #d12f1b !important; } /* <태그> */
+    .markdown-section .token.attr-name   { color: #1f6feb !important; } /* 속성 이름 (예: class) */
+    .markdown-section .token.attr-value,
+    .markdown-section .token.string      { color: #076c94 !important; } /* 문자열/속성값 */
+    .markdown-section .token.keyword     { color: #fa6262 !important; } /* 예약어/키워드 (if, def 등) */
+    .markdown-section .token.function    { color: #6f42c1 !important; } /* 함수명 */
+    .markdown-section .token.class-name  { color: #005cc5 !important; } /* 클래스명 */
+    .markdown-section .token.number      { color: #005cc5 !important; }
+    .markdown-section .token.boolean     { color: #005cc5 !important; }
+    .markdown-section .token.operator    { color: #d73a49 !important; }
+    .markdown-section .token.comment     { color: #278b35 !important; } /* 주석 */
+
+    /* ===== Prism Python 추가 커스텀 ===== */
+      
+    /* 내장 함수 (input, print, len, range 등) */
+    .markdown-section .token.builtin {
+      color: #2f81f7 !important;   /* 파란색 계열로 */
+      font-weight: 500;
+    }
+
+    
+    .markdown-section pre code.language-python span:not([class]) {
+      color: #0969da !important;  /* 클래스 없는 토큰 → 변수처럼 표시 */
+    }
+    
+    /* 함수 이름 */
+    .markdown-section .token.function {
+      color: #6f42c1 !important;
+      font-weight: 600;
+    }
+    
+    
+    
+
+    /* 💬 인라인 코드(문장 내 `백틱` 코드) 스타일 */
+    .markdown-section p > code,
+    .markdown-section li > code {
+      background: #f6f8fa !important;  /* 연한 배경 */
+      color: #24292f !important;       /* 진한 글자색 */
+      padding: .15em .35em;            /* 내부 여백 */
+      border-radius: 4px;              /* 모서리 둥글게 */
+      border: 1px solid #e5e7eb;       /* 살짝 회색 테두리 */
+      font-size: 0.95em;               /* 본문보다 약간 작게 */
+    }
+
+    /* ✅ 추가로 전체 코드 블록 여백 조정 (선택사항) */
+    .markdown-section pre {
+      padding: 1em 1.2em;              /* 안쪽 여백 */
+      border-radius: 6px;              /* 모서리 부드럽게 */
+      overflow-x: auto;                /* 긴 코드 스크롤 허용 */
+    }
+  </style>
+
+  <!-- Prism.js 어두운 테마 -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/prismjs@1/themes/prism-okaidia.min.css" />
+
+  <!-- 사용자 정의 CSS -->
+  <link rel="stylesheet" href="Custom.css">
+</head>
+<body>
+  <div id="app">Loading...</div>
+
+  <script>
+    window.$docsify = {
+      name: 'Dev Wiki',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      prism: true,
+      search: {
+        maxAge: 1,
+        paths: 'auto',
+        placeholder: '검색어를 입력하세요.',
+        noData: '결과를 찾을 수 없습니다.',
+        depth: 3,
+        hideOtherSidebarContent: false,
+        namespace: 'docs',
+      }
+    };
+  </script>
+
+  <!-- 이모지 플러그인 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/emoji.min.js"></script>
+
+  <!-- Docsify core -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- 검색 플러그인 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+  <!-- Prism.js 언어 지원 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-typescript.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-sql.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-css.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-markup.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+
+  <!-- ✅ 추가됨: Python 구문 강조 -->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-python.min.js"></script>
+</body>
+</html>
