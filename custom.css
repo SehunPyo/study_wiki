@@ -65,6 +65,8 @@ mark-orange {
 
 /* ------------------------------------------------------------------- */
 
+/* 라벨 효과 설정 */
+
 label-blue {
   font-size: 14px;  
   padding: 0 2px;           
@@ -101,10 +103,39 @@ label-orange {
   border-radius: 3px;       
 }
 
+label-gray {
+  font-size: 14px;
+  padding: 0 2px;           
+  color: #858585;            
+  background-color: #dfdfdfcb;
+  border: 1px solid;
+  border-radius: 3px;       
+}
+
+lb-blue {
+  font-size: 17px;  
+  padding: 0 2px;           
+  color: #1773c9;            
+  background-color: #d0e7f9cb;
+  border: 1px solid;
+  border-radius: 3px;       
+}
+
+
 /* ------------------------------------------------------------------- */
+
+/* 글씨색상 효과 설정 */
 
 txtcolor-blue {
   color: #4a9eec;            
+};
+
+txtcolor-red {
+  color: #f83939;            
+};
+
+txtcolor-green {
+  color: #287a25;            
 };
 
 /* ------------------------------------------------------------------- */
@@ -166,3 +197,4 @@ h5{
 }
 
 /* ------------------------------------------------------------------- */
+
