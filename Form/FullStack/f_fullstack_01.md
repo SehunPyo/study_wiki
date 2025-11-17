@@ -253,7 +253,7 @@ Pydantic 스키마들을 모아두는 곳이다.
 
 from datetime import datetime
 from pydantic import BaseModel
-
+from typing   import Optional
 # 예시 ) 클라이언트가 입력/수정이 가능한 content, item, age, name 컬럼이 있는 상황
 
 

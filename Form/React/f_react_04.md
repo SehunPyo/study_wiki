@@ -1005,4 +1005,97 @@ HTML를 예로 들자면 아래와 같다.
 - <label-blue>type="text"</label-blue> : 속성
 - <label-blue>placeholder</label-blue> : 속성
 
-즉, 속성은 <txtcolor-red>태그에 붙히는 옵션/설정</txtcolor-red>을 의미한다.
+즉, 속성은 <txtcolor-blue>태그에 붙히는 옵션/설정</txtcolor-blue>을 의미한다.
+
+<br>
+
+#### 2) 리액트에서 속성은 언제 사용할까?
+React(JSX)에서는 속성을 두 가지 방법으로 사용한다.
+
+###### 2-1) 문자열로 작성할 때 (" " 사용)
+```js
+<input type="text" placeholder="이름" />
+```
+- "이름"은 글자이기 때문에 따옴표를 사용한다.
+
+###### 2-2) JS값으로 사용할 때 ({ } 사용)
+```js
+const name = "철수";
+const size = 100;
+
+<h1>안녕, {name}</h1>
+<img src="/logo.png" width={size} height={size} />
+```
+- <label-blue>{name} 이라고 작성</label-blue> : name 변수 안에 있는 "철수"가 들어간다.
+- <label-blue>{size} 이라고 작성</label-blue> : size 변수 안에 있는 100이 들어간다.
+- 정리하자면, 그냥 글자는 따옴표를 사용하고 변수/숫자/계산 등은 {값} 형태로 사용한다.
+
+<br>
+
+#### 3) Class, for을 헷갈리지 말기
+HTML과 React에서 사용하는 Class와 for을 헷갈리기 쉬운데 아래처럼 차이가 있다.
+
+```html
+<!-- html -->
+
+<div class="box"></div>
+<label for="username">아이디</label>
+```
+
+```js
+// jsx
+
+<div className="box"></div>
+<label htmlFor="username">아이디</label>
+```
+
+- class 대신 <label-blue>className</label-blue>을, for 대신 <label-blue>htmlFor</label-blue>을 사용한다.
+
+<br>
+
+#### 4) onClick 이벤트같은 이벤트 함수를 사용하고 싶을 때
+만약 버튼을 클릭했을 때 함수를 실행하고 싶다면 아래의 예시를 참고하자.
+
+```js
+function handleClick() {
+  alert("클릭!");
+}
+
+<button onClick={handleClick}>눌러봐</button>
+```
+
+- <label-blue>onClick</label-blue> : 이벤트 속성의 이름
+- <label-blue>{handleClick}</label-blue> : 클릭하면 실행할 함수
+
+###### 주요 포인트
+1. <label-red>onClick="handleClick()"</label-red> : 문자열이라 불가
+2. <label-blue>onClick={handleClick}</label-blue> : 함수를 그대로 넘기기 때문에 가능
+
+<br>
+
+#### 5) 예시
+
+```js
+const name = "세훈";
+
+// 1. Hello라는 이름의 컴포넌트를 함수 형태로 정의
+// 2. 이 함수는 props라는 하나의 인자를 받는다. (props = 속성들이 들어있는 객체 [정해진 이름 아님])
+function Hello(props) {
+  // 3. {props.name} 부분에는 props 안에 있는 name 값이 들어간다.
+  // 4. 예를 들어 name이 "세훈"이면 "안녕, 세훈" 이라고 보이게 된다.
+  return <h1>안녕, {props.nameItem}</h1>;
+}
+
+// ★ 여기까지 하면 끝난 것 같지만, 실제로 선언만 하고 호출하지 않았기 때문에 호출을 해야한다.
+
+function App() {
+  return (
+    <div>
+      {/* 5. Hello 컴포넌트를 호출하면서 name이라는 속성에 변수 name의 값을 전달 */}
+      <Hello nameItem={name} />
+    </div>
+  );
+}
+
+export default App;
+```
