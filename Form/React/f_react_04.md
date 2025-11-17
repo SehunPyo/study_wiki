@@ -993,5 +993,16 @@ console.log(formatDateTimeKR('2025-11-13T07:30:00Z'));
 
 ---
 
-## 11. 속성(Attribute) 작성
+## 12. 속성(Attribute) 작성
 
+#### 1) 속성이란?
+HTML를 예로 들자면 아래와 같다.
+
+```html
+<input type="text" placeholder="이름"/>
+```
+- <label-blue>input</label-blue> : 태그 이름
+- <label-blue>type="text"</label-blue> : 속성
+- <label-blue>placeholder</label-blue> : 속성
+
+즉, 속성은 <txtcolor-red>태그에 붙히는 옵션/설정</txtcolor-red>을 의미한다.
